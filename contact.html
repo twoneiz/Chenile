@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Our Loves, Our Efforts</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-mark">OL</span>
+                <span class="logo-text">Our Loves, Our Efforts</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="products.html#price">Price</a></li>
+                    <li><a href="products.html#color">Color</a></li>
+                    <li><a href="products.html#bouquet">Bouquet</a></li>
+                    <li><a href="products.html#keychain">Keychain</a></li>
+                    <li><a href="products.html#flower-card">Flower Card</a></li>
+                    <li><a href="products.html#special-edition">Special Edition</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page-with-top-padding">
+        <section class="section page-heading">
+            <div class="container">
+                <h1 class="section-title animate-on-scroll">Contact Us</h1>
+                <p class="section-subtitle animate-on-scroll">
+                    Share your ideas, budget, and preferred date – we’ll get back to you with suggestions and confirmation.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container contact-layout">
+                <div class="contact-form-wrapper animate-on-scroll">
+                    <h2>Send Us a Message</h2>
+                    <!-- This is a front-end form only. Connect to backend or form service later. -->
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name*</label>
+                            <input type="text" id="name" name="name" required placeholder="Your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" required placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number*</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="+60...">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / Order Details*</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us what you would like to order or customise..."></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Submit</button>
+                        <p class="form-note">*This is a demo form. Please also contact us directly via WhatsApp or Instagram.</p>
+                    </form>
+                </div>
+
+                <div class="contact-info animate-on-scroll">
+                    <h2>Contact Details</h2>
+                    <p>
+                        For faster response, feel free to contact us directly on WhatsApp or social media.
+                    </p>
+                    <ul class="contact-list">
+                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/60139083945" target="_blank" rel="noopener">+60 13-908 3945</a></li>
+                        <li><strong>Instagram:</strong> <a href="https://www.instagram.com" target="_blank" rel="noopener">@ourloves.ourefforts</a></li>
+                        <li><strong>TikTok:</strong> <a href="https://www.tiktok.com" target="_blank" rel="noopener">@ourloves.ourefforts</a></li>
+                    </ul>
+
+                    <h3>Operating Hours</h3>
+                    <p>
+                        <strong>Mon – Fri:</strong> 8:00 PM – 11:00 PM<br>
+                        <strong>Sat – Sun:</strong> Limited slots (depending on order volume)
+                    </p>
+
+                    <h3>Location</h3>
+                    <p>
+                        Handmade from home studio.<br>
+                        Delivery and meet-up details will be discussed upon order.
+                    </p>
+
+                    <div class="map-placeholder">
+                        Google Maps / Location placeholder
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-teaser">
+            <div class="container contact-teaser-inner animate-on-scroll">
+                <div>
+                    <h2>Order via WhatsApp</h2>
+                    <p>
+                        If you already know what you want, click the button below and send us your details directly.
+                    </p>
+                </div>
+                <div>
+                    <a href="https://wa.me/60139083945" target="_blank" rel="noopener" class="btn primary-btn">
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="year"></span> Our Loves, Our Efforts. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                <a href="https://wa.me/60139083945">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
