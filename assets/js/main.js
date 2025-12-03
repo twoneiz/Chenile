@@ -46,6 +46,78 @@ document.addEventListener("DOMContentLoaded", () => {
         animatedElements.forEach(el => el.classList.add("in-view"));
     }
 
+    // Nav active state
+    const navLinks = document.querySelectorAll(".main-nav a");
+    if (navLinks.length) {
+        const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+        const currentHash = (location.hash || "").toLowerCase();
+
+        const clearActiveAll = () => navLinks.forEach(l => l.classList.remove("active"));
+
+        // Base active state (initial load)
+        navLinks.forEach(link => link.classList.remove("active"));
+        const initialSamePage = Array.from(navLinks).find(link => {
+            const href = link.getAttribute("href") || "";
+            const [pagePart, hashPart] = href.split("#");
+            const targetPage = (pagePart || "").replace("./", "").toLowerCase() || "index.html";
+            const targetHash = hashPart ? "#" + hashPart.toLowerCase() : "";
+            const pageMatches = targetPage === currentPage;
+            const hashMatches = targetHash && currentHash === targetHash;
+            return pageMatches && (hashMatches || (!hashPart && !currentHash));
+        });
+        if (initialSamePage) initialSamePage.classList.add("active");
+
+        // Scroll-based active state for same-page section links
+        const sectionLinks = Array.from(navLinks).filter(link => {
+            const href = link.getAttribute("href") || "";
+            const [pagePart, hashPart] = href.split("#");
+            const targetPage = (pagePart || "").replace("./", "").toLowerCase() || "index.html";
+            return targetPage === currentPage && hashPart;
+        });
+
+        if (sectionLinks.length) {
+            const sectionMap = sectionLinks.map(link => {
+                const id = link.getAttribute("href").split("#")[1];
+                const section = document.getElementById(id);
+                return section ? { link, section } : null;
+            }).filter(Boolean);
+
+            const headerEl = document.querySelector(".site-header");
+            const getHeaderOffset = () => (headerEl ? headerEl.offsetHeight : 0);
+
+            let ticking = false;
+            const updateActiveOnScroll = () => {
+                const offset = getHeaderOffset() + 10;
+                const targetLine = offset + window.innerHeight * 0.3;
+                let best = null;
+                sectionMap.forEach(item => {
+                    const rect = item.section.getBoundingClientRect();
+                    const center = rect.top + rect.height / 2;
+                    const dist = Math.abs(center - targetLine);
+                    if (best === null || dist < best.dist) {
+                        best = { ...item, dist };
+                    }
+                });
+                if (best) {
+                    clearActiveAll();
+                    best.link.classList.add("active");
+                }
+                ticking = false;
+            };
+
+            const onScroll = () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateActiveOnScroll);
+                    ticking = true;
+                }
+            };
+
+            window.addEventListener("scroll", onScroll, { passive: true });
+            window.addEventListener("resize", onScroll);
+            updateActiveOnScroll();
+        }
+    }
+
     // Hero slider (no parallax)
     const slider = document.querySelector(".hero-slider");
     const dots = slider ? Array.from(document.querySelectorAll(".hero-dots .dot")) : [];
