@@ -670,34 +670,29 @@ body {
 }
 
 .story-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 0.35rem;
-    width: min(720px, 100%);
-    padding: 0.7rem 0.9rem;
+    width: min(440px, 100%);
+    padding: 0.2rem 0.25rem;
     border-radius: var(--radius-lg);
     background: linear-gradient(135deg, rgba(255, 239, 226, 0.9), rgba(255, 248, 243, 0.98));
     border: 1px dashed rgba(230, 59, 76, 0.18);
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    justify-items: center;
-    align-items: center;
 }
 
 .story-gallery img {
-    height: 300px;
+    height: 360px;
     width: auto;
     max-width: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 0.85rem;
     display: block;
-    background: #fff;
-}
-
-.story-gallery img:nth-child(2) {
-    max-width: 102%;
-    object-position: center 50%;
+    background: transparent;
 }
 
 /* ===== Contact Teaser (shared) ===== */
