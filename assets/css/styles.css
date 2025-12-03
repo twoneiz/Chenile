@@ -90,17 +90,13 @@ body {
 }
 
 .logo-mark {
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    background: radial-gradient(circle at 30% 30%, #ffd5c5, #e63b4c);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: white;
-    font-size: 0.9rem;
-    box-shadow: var(--shadow-soft);
+    height: 40px;
+    width: 64px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    flex-shrink: 0;
 }
 
 .logo-text {
@@ -927,13 +923,27 @@ body {
 /* Contact Layout */
 .contact-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
     gap: 2rem;
     align-items: flex-start;
 }
 
 .contact-form-wrapper h2 {
     margin-top: 0;
+}
+
+.logo-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-panel img {
+    width: 100%;
+    height: auto;
+    max-height: 570px;
+    object-fit: contain;
+    display: block;
 }
 
 .contact-form .form-group {
