@@ -484,6 +484,18 @@ body {
     flex-shrink: 0;
 }
 
+.rail-swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+    background: #fff7f2;
+}
+
 /* ===== Buttons ===== */
 .btn {
     display: inline-flex;
@@ -862,11 +874,14 @@ body {
     box-shadow: var(--shadow-soft);
 }
 
-.color-swatch {
+.color-swatch-img {
     width: 20px;
     height: 20px;
     border-radius: 999px;
     border: 1px solid rgba(0, 0, 0, 0.06);
+    object-fit: cover;
+    display: block;
+    background: #fff7f2;
 }
 
 .color-name {
