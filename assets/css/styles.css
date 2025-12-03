@@ -434,7 +434,7 @@ body {
 .rail-track {
     display: flex;
     gap: 0.8rem;
-    animation: rail 28s linear infinite;
+    animation: rail 15s linear infinite;
     padding: 0.4rem;
     min-width: 200%;
 }
