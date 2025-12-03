@@ -779,6 +779,28 @@ body {
     margin-bottom: 0.75rem;
 }
 
+.single-product-image {
+    background: #fff7f2;
+    border: 1px dashed rgba(230, 59, 76, 0.2);
+    border-radius: 1rem;
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.single-product-visual {
+    width: 100%;
+    max-width: 420px;
+    height: 240px;
+    object-fit: contain;
+    display: block;
+    border-radius: 0.85rem;
+    background: #fff;
+}
+
 /* Special Edition Blocks */
 .special-block {
     display: grid;
@@ -801,6 +823,25 @@ body {
     margin: 0.8rem 0 1rem;
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+.special-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.special-visual {
+    width: 100%;
+    max-width: 440px;
+    height: 260px;
+    object-fit: contain;
+    background: #fff7f2;
+    border: 1px dashed rgba(230, 59, 76, 0.2);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-soft);
+    display: block;
 }
 
 /* Color Grid */
